@@ -1,0 +1,48 @@
+<div class="container">
+
+  <table class="table table-bordered table-hover">
+    <thead class="bg-dark text-white">
+      <tr>
+        <th>Video</th>
+        <th>Course Name</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let k of allvideo">
+        <td>
+          <iframe [src]='k.Path|safepipe' height="120" width="250"></iframe>
+        </td>
+        <td>
+          {{k.Course}}
+        </td>
+        <td>
+          <input type="button" (click)="UpdateVideo(k)" value="Update" class="btn btn-info">
+          <input type="button" (click)="DeleteVideo(k)" data-toggle="modal" data-target="#modelId" value="Delete"
+            class="btn btn-danger ml-2">
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="modal fade" id="modelId">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Delete Video</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <i class="fa fa-exclamation-triangle text-danger"></i>&nbsp;Are Your Sure To Delete?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+        <button (click)="FinalDelete()" data-dismiss="modal" type="button" class="btn btn-danger">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
