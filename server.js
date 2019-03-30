@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://dhr:dhr123@himanshu-j2wci.mongodb.net/test?retryWrites=true', { useNewUrlParser: true })
+mongoose.connect('mongodb+srv://aj:<ajmani>@cluster0-c60su.mongodb.net/test?retryWrites=true', { useNewUrlParser: true })
 const app = express();
 app.use(cors());
 
